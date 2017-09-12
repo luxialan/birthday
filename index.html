@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="space"/><span class="comments">2014年...</span><br />
+			她独自一人从山东来到了广州大学城面试;<br />
+			<span class="comments">//那时的她有些胆小.</span><br />
+			<span class="comments">//一开始连骑单车都有点害怕.</span>
+			<br />她顺利地进入了413实验室<br />
+			<span class="comments">//一开始晚上还不敢独自一人回宿舍</span>
+			<br />实验室的事情有点多<br />
+			<span class="comments">//她总能忙里偷闲</span>
+			<br />她在背岗胡吃海喝<br />
+			<span class="comments">//就是没长胖多少</span>
+			<br />她有时也挺辛苦<br />
+			<span class="comments">//太拼命忘了照顾自己</span>
+			<br />她有时压力也挺大<br />
+			<span class="comments">//但她总说自己很好</span><br />
+			<br />
+			<span class="comments">后来的后来....</span>
+			<br />她学会了骑单车<br />
+			<span class="comments">//其实没有那么难</span><br />
+			她渐渐有了一堆朋友<br />
+			<span class="comments">//虽然过程有那么一点点曲折</span>
+			<br />
+			她更漂亮了<br />
+			<span class="comments">//穿裙子的样子非常好看</span>
+			<br />
+			也更会照顾人了<br />
+			<span class="comments">//她骨子里是个温柔的人</span><br />
+			年年岁岁她在成长<br />
+			<span class="comments">//内心始终是一个小女孩</span>
+			</span><br /><br />
+			希望她能身体健康、幸福快乐<br />
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					游瑾洁小公举
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					生日快乐<br/>
+					<div class="signature"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(1993, 9, 13);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 30000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>
